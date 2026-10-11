@@ -24,6 +24,11 @@ docker-compose.yml
 .dockerignore
 
 # Development files
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
 README.md
 *.md
 .vscode
