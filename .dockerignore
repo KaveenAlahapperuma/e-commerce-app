@@ -23,13 +23,6 @@ Dockerfile
 docker-compose.yml
 .dockerignore
 
-# Development files
-
-# Databases
-*.db
+# Databases (keeping .db allowed for migrations, ignoring other local sqlite files)
 *.sqlite
 *.sqlite3
-README.md
-*.md
-.vscode
-.idea
