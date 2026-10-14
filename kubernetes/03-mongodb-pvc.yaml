@@ -4,6 +4,8 @@ metadata:
   name: mongodb-pvc
   namespace: easyshop
 spec:
+  storageClassName: ""
+  volumeName: mongodb-pv
   accessModes:
     - ReadWriteOnce
   resources:
