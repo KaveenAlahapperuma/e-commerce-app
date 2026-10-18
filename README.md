@@ -36,8 +36,6 @@ A 3-tier e-commerce application (**Next.js**, Node API routes, **MongoDB**) prov
 <a id="architecture"></a>
 ## 🏗️ Architecture
 
-![Architecture diagram](docs/architecture.png)
-
 ```
 Developer ──push──► GitHub ──webhook──► Jenkins EC2 (CI)
                        ▲                    │ build + push image
@@ -708,19 +706,27 @@ aws ec2 describe-instances --region us-west-2 --query "Reservations[].Instances[
 <a id="screenshots"></a>
 ## 📸 Screenshots
 
-<!-- Add your screenshots under docs/. Blur the AWS account ID, ALB addresses, passwords and webhook URLs. -->
+### 🛒 Application and GitOps
 
-| 🛒 EasyShop running | 🚀 ArgoCD (Synced / Healthy) |
+| EasyShop running on EKS | ArgoCD: Synced and Healthy |
 |---|---|
-| ![App](docs/app.png) | ![ArgoCD](docs/argocd.png) |
+| ![EasyShop](docs/app.png) | ![ArgoCD](docs/argocd.png) |
 
-| 🔨 Jenkins pipeline | 📊 Grafana dashboard |
-|---|---|
-| ![Jenkins](docs/jenkins.png) | ![Grafana](docs/grafana.png) |
+### 📊 Monitoring
 
-| 🔥 Prometheus targets | 💬 Slack alert |
+| Grafana: Node Exporter / Nodes | Grafana: Compute Resources, `easyshop` namespace |
 |---|---|
-| ![Prometheus](docs/prometheus.png) | ![Slack](docs/slack.png) |
+| ![Node Exporter](docs/grafana-node-exporter.png) | ![Compute Resources](docs/grafana-kubernetes-pods.png) |
+
+| Grafana: Networking / Namespace (Pods) | Prometheus: target health |
+|---|---|
+| ![Networking](docs/grafana-networking-namespace.png) | ![Prometheus targets](docs/prometheus-targets.png) |
+
+### 🚨 Alerting
+
+| Alertmanager | Slack `#alerts` |
+|---|---|
+| ![Alertmanager](docs/alert-manager.png) | ![Slack alerts](docs/slack.png) |
 
 ---
 
