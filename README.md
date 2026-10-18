@@ -36,6 +36,12 @@ A 3-tier e-commerce application (**Next.js**, Node API routes, **MongoDB**) prov
 <a id="architecture"></a>
 ## 🏗️ Architecture
 
+![AWS architecture diagram](docs/architecture.png)
+
+*Numbered arrows show the flow: code push → Jenkins CI → Docker Hub → ArgoCD sync → ALB → pods, plus NAT egress, Slack alerts and Bastion access.*
+
+Text version of the same flow:
+
 ```
 Developer ──push──► GitHub ──webhook──► Jenkins EC2 (CI)
                        ▲                    │ build + push image
